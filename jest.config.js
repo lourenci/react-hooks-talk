@@ -8,7 +8,6 @@ module.exports = {
   coverageDirectory: 'coverage',
   testMatch: ['<rootDir>/src/**/*.spec.js'],
   setupFilesAfterEnv: [
-    '@testing-library/react/cleanup-after-each',
-    'jest-dom/extend-expect'
+    '@testing-library/jest-dom/extend-expect'
   ]
 }
