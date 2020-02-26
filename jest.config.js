@@ -1,5 +1,5 @@
 module.exports = {
-  testEnvironment: 'jest-environment-jsdom-fifteen',
+  testEnvironment: 'jest-environment-jsdom-sixteen',
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**',
