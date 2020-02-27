@@ -1,9 +1,8 @@
 # Template for React projects
 * React (with Hooks)
 * Jest
-    * jsdom fifteen
+    * jsdom sixteen
     * react-testing-library
 * Eslint (ejected standard)
-* CodeClimate
-* Travis
+* GitHub actions for specs
 * Webpack

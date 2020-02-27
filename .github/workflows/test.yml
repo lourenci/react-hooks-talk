@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+
+jobs:
+  linter-and-unit:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: 'test'
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: linter and unit test
+      run: |
+        yarn
+        yarn lint
+        yarn jest
