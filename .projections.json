@@ -1,0 +1,13 @@
+{
+  "src/*.spec.js": {
+    "alternate": "src/{}.js",
+    "start": "yarn jest:watch src/{}.spec.js",
+    "dispatch": "yarn jest src/{}.spec.js"
+  },
+  "src/*.js": {
+    "alternate": "src/{}.spec.js",
+    "start": "yarn jest:watch src/{}.spec.js",
+    "dispatch": "yarn jest src/{}.spec.js"
+  }
+}
+
