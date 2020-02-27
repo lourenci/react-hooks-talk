@@ -31,7 +31,6 @@
   },
   "scripts": {
     "lint": "eslint 'src/**/*.js'",
-    "test": "jest",
     "start": "webpack-dev-server --open",
     "jest:watch": "jest --no-coverage --verbose --watch --runInBand --notify --notifyMode always"
   },
