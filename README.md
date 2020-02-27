@@ -6,3 +6,4 @@
 * Eslint (ejected standard)
 * GitHub actions for specs
 * Webpack
+* Renovate bot
