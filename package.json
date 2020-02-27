@@ -32,7 +32,8 @@
   "scripts": {
     "lint": "eslint 'src/**/*.js'",
     "test": "jest",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "jest:watch": "jest --no-coverage --verbose --watch --runInBand --notify --notifyMode always"
   },
   "dependencies": {
     "react": "16.8.6",
