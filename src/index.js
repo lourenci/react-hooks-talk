@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ClassComponent from './ClassComponent'
+import ClassComponent, { withIncrement } from './ClassComponent'
 import FunctionalComponent from './FunctionalComponent'
+
+const IncrementalComponent = withIncrement(ClassComponent)
 
 function App () {
   return (
     <>
-      <ClassComponent />
+      <IncrementalComponent />
       <FunctionalComponent />
     </>
   )

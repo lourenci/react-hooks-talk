@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useIncremental } from './useIncremental'
+import { useTitle } from './useTitle'
 
-export default function (props) {
-  const [counter, setCounter] = useState(0)
+export default function () {
+  const [counter, incrementCounter] = useIncremental(0)
+  useTitle(`Functional ${counter}`)
 
   useEffect(() => {
-    document.title = `Functional ${counter}`
-  })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter(counter => counter + 1)
-    }, 2500)
+    const interval = setInterval(incrementCounter, 2500)
 
     return () => clearInterval(interval)
   })
@@ -19,7 +16,7 @@ export default function (props) {
     <div>
       <h2>Functional component</h2>
       <p>{counter}</p>
-      <button onClick={() => setCounter(counter => counter + 1)}>Increment Functional</button>
+      <button onClick={incrementCounter}>Increment Functional</button>
     </div>
   )
 }

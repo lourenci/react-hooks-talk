@@ -1,21 +1,34 @@
 import React from 'react'
 
-export default class Counter extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { counter: 0 }
-  }
+export function withIncrement (Component) {
+  return class extends React.Component {
+    constructor (props) {
+      super(props)
+      this.state = { counter: 0 }
+      this.incrementCounter = this.incrementCounter.bind(this)
+    }
 
-  componentDidMount () {
-    document.title = `Class ${this.state.counter}`
-
-    this.interval = setInterval(() => {
+    incrementCounter () {
       this.setState(state => ({ counter: state.counter + 1 }))
-    }, 2000)
+    }
+
+    render () {
+      return (
+        <Component counter={this.state.counter} increment={this.incrementCounter} />
+      )
+    }
+  }
+}
+
+export default class Counter extends React.Component {
+  componentDidMount () {
+    document.title = `Class ${this.props.counter}`
+
+    this.interval = setInterval(this.props.increment, 2000)
   }
 
   componentDidUpdate () {
-    document.title = `Class ${this.state.counter}`
+    document.title = `Class ${this.props.counter}`
   }
 
   componentWillUnmount () {
@@ -26,8 +39,8 @@ export default class Counter extends React.Component {
     return (
       <div>
         <h2>Class component</h2>
-        <p>{this.state.counter}</p>
-        <button onClick={() => this.setState(state => ({ counter: state.counter + 1 }))}>Increment class component</button>
+        <p>{this.props.counter}</p>
+        <button onClick={this.props.increment}>Increment class component</button>
       </div>
     )
   }
