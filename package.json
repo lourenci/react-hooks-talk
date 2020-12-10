@@ -35,7 +35,7 @@
     "jest:watch": "jest --no-coverage --verbose --watch --runInBand --notify --notifyMode always"
   },
   "dependencies": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   }
 }
